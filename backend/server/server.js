@@ -17,7 +17,7 @@ mongoose.connect(mongoDBUri)
 .catch((error)=>{
     console.error("Error Connecting to MongoDB",error);
 });
-app.use(cors());
+app.use(cors({origin:'*'}));
 app.use('/auth',require('./Routes/auth'));
 app.use('/blog',require('./Routes/blogs'));
 
