@@ -17,11 +17,11 @@ mongoose.connect(mongoDBUri)
 .catch((error)=>{
     console.error("Error Connecting to MongoDB",error);
 });
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 app.use('/auth',require('./Routes/auth'));
 app.use('/blog',require('./Routes/blogs'));
 
-const PORT=process.env.PORT || 5000;
-app.listen(PORT,()=>{
+const PORT=process.env.PORT || 10000;
+app.listen(PORT,'0.0.0.0',()=>{
     console.log(`Server is listening on port ${PORT}`);
 })
