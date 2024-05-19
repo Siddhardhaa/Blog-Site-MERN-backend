@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server":"nodemon server.js",
+    "server":"nodemon /server/server.js",
     "build":"npm i"
   },
   "author": "",
