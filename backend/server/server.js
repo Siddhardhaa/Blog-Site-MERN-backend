@@ -5,11 +5,9 @@ const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const cors=require('cors');
 const app=express();
-
+const uploadRoute = require('./Routes/upload');
 const mongoDBUri=process.env.MONGODB_URI;
 app.use(express.json()); 
-// console.log(process.env.MONGODB_URI);
-// console.log(process.env.JWT_SECRET);
 mongoose.connect(mongoDBUri)
 .then(()=>{
     console.log("Connected to MongoDB");
@@ -20,6 +18,7 @@ mongoose.connect(mongoDBUri)
 app.use(cors({origin:'*'}));
 app.use('/auth',require('./Routes/auth'));
 app.use('/blog',require('./Routes/blogs'));
+app.use('/api',require('./Routes/upload'));
 
 const PORT=process.env.PORT || 10000;
 app.listen(PORT,'0.0.0.0',()=>{

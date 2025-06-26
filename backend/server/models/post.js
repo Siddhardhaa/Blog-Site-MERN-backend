@@ -4,5 +4,6 @@ const postSchema=new mongoose.Schema({
     content:{type:String,required:true},
     author:{type:String},
     tags:{type:String},
+    imageUrl: {type: String,required: false}
 },{timestamps:true});
 module.exports=mongoose.model("Post",postSchema);
